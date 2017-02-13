@@ -1,0 +1,10 @@
+serverp: serverp.o
+	 gcc -L/usr/local/lib $(CFLAGS) -o serverp serverp.o -lrt -lpthread -lgsl -lgslcblas -lm
+
+serverp.o: serverp.c serverp.h
+	   gcc -Wall -c serverp.c serverp.h
+
+
+clean: 
+	rm -f *.o *.gch serverp
+

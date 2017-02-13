@@ -1,0 +1,9 @@
+map_api: map_api.o dijkstra.o heap.o
+	gcc $(CFLAGS) -g -o map_api map_api.o dijkstra.o heap.o -std=c99 -lrt -lpthread
+
+map_api.o: map_api.c dijkstra.c heap.c 
+	gcc $(CFLAGS) -g -w -c map_api.c map_api.h dijkstra.c dijkstra.h heap.c heap.h -std=c99 -lrt -lpthread
+
+clean: 
+	rm -f *.o *.gch map_api Map.txt
+
